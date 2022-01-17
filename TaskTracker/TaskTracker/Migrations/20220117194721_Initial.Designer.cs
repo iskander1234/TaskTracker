@@ -10,7 +10,7 @@ using TaskTracker.Models;
 namespace TaskTracker.Migrations
 {
     [DbContext(typeof(TaskTrackerContext))]
-    [Migration("20220117183229_Initial")]
+    [Migration("20220117194721_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
