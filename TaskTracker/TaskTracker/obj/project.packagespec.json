@@ -26,6 +26,10 @@
   "frameworks": {
     "netcoreapp3.1": {
       "dependencies": {
+        "Microsoft.EntityFrameworkCore.Design": {
+          "target": "Package",
+          "version": "[3.1.4, )"
+        },
         "Npgsql.EntityFrameworkCore.PostgreSQL": {
           "target": "Package",
           "version": "[3.1.3, )"
