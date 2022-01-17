@@ -1,0 +1,25 @@
+﻿@model TaskTracker.ViewModels.ViewModel
+
+
+<div class="form_row">
+    <label for="">
+        Name
+        <input asp-for="@Model.Task.Name" type="text">
+    </label>
+</div>
+<div class="form_row">
+    <label for="">
+        Priority
+        <select asp-for="@Model.Task.Priority">
+            <option value="0">High</option>
+            <option value="1">Average</option>
+            <option value="2">Low</option>
+        </select>
+    </label>
+</div>
+<div class="form_row">
+    <div class="about">
+        Description
+    </div>
+    <textarea asp-for="@Model.Task.Description" type="text"></textarea>
+</div>

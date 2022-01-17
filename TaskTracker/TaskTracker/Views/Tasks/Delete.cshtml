@@ -1,0 +1,13 @@
+﻿@model TaskTracker.Models.Task
+
+@{
+    ViewBag.Title = "Delite";
+    Layout = "_Layout";
+}
+
+<h2>Are you sure you want to delete : @Model.Name ? </h2>
+
+<form asp-action="Delete" asp-controller="Tasks" asp-route-id="@Model.Id" method="post">
+    <button type="submit">Yes</button>
+    <button asp-action="Index">No</button>
+</form>

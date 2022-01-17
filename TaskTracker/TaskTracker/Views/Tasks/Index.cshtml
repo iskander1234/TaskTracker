@@ -1,0 +1,128 @@
+﻿@model TaskTracker.ViewModels.TaskIndexViewModel
+
+@{
+    ViewData["Title"] = "Tasks";
+    Layout = "_Layout";
+}
+
+<h2>Task list</h2>
+
+
+@if (@Model.Tasks.Count == 0)
+{
+    <p>The list is empty</p>
+}
+else
+{
+    <table class="custom_table">
+        <tr>
+            <th>Id</th>
+            <th>
+                <a asp-action="Index" asp-controller="Tasks"
+                   asp-route-sortOrder="@ViewBag.NameSort"
+                   asp-route-page="@Model.PageViewModel.PageNumber">
+                    Task name
+                </a>
+            </th>
+            <th>
+                <a asp-action="Index" asp-controller="Tasks"
+                   asp-route-sortOrder="@ViewBag.PrioritySort"
+                   asp-route-page="@Model.PageViewModel.PageNumber">
+                    Priority
+                </a>
+
+            </th>
+            <th>
+                <a asp-action="Index" asp-controller="Tasks"
+                   asp-route-sortOrder="@ViewBag.DataSort"
+                   asp-route-page="@Model.PageViewModel.PageNumber">
+                    Date Created
+                </a>
+            </th>
+            <th>Date Open</th>
+            <th>Date Closing</th>
+            <th>
+                <a asp-action="Index" asp-controller="Tasks"
+                   asp-route-sortOrder="@ViewBag.StatusSort"
+                   asp-route-page="@Model.PageViewModel.PageNumber">
+                    Status
+                </a>
+
+            </th>
+            <th>Action</th>
+        </tr>
+        @foreach (var task in Model.Tasks)
+        {
+            <tr>
+                <td>@task.Id</td>
+                <td>@task.Name</td>
+                <td>@if (@task.Priority == Priority.Tall)
+                    {
+                        <span>High</span>
+                    }
+                    else if (@task.Priority == Priority.Middle)
+                    {
+                        <span>Average</span>
+                    }
+                    else
+                    {
+                        <span>Low</span>
+                    }
+                </td>
+                <td>@task.СreatedDate</td>
+                <td>@task.OpenedDate</td>
+                <td>@task.ClosedDate</td>
+                <td>@if (task.Status == Status.Open)
+                    {
+                        <span>Open</span>
+                    }else if (task.Status == Status.New)
+                    {
+                        <span>New</span>
+                    }
+                    else
+                    {
+                        <span>Closed</span>
+                    }
+                    </td>
+                <td>
+                    @if (task.Status == Status.Open)
+                    {
+                        <a class="btn btn-secondary" asp-action="Close" asp-controller="Tasks" asp-route-id="@task.Id">Close</a>
+                        <a class="btn btn-info" asp-action="Edit" asp-controller="Tasks" asp-route-id="@task.Id">Edit</a>
+                                                                                                                      
+                    }
+                    @if (task.Status == Status.Close)
+                    {
+                        <a class="btn btn-danger" asp-action="Delete" asp-controller="Tasks" asp-route-id="@task.Id">Delite</a>
+                        <a class="btn btn-info" asp-action="Edit" asp-controller="Tasks" asp-route-id="@task.Id">Edit</a>
+                    }
+                    @if (task.Status == Status.New)
+                    {
+                        <a class="btn btn-success" asp-action="Open" asp-controller="Tasks" asp-route-id="@task.Id">Open</a>
+                        <a class="btn btn-danger" asp-action="Delete" asp-controller="Tasks" asp-route-id="@task.Id">Delite</a>
+                        <a class="btn btn-info" asp-action="Edit" asp-controller="Tasks" asp-route-id="@task.Id">Edit</a>
+                    }
+                    <a class="btn btn-primary" asp-action="Details" asp-controller="Tasks" asp-route-id="@task.Id">Details</a>
+                </td>
+            </tr>
+        }
+    </table>
+}
+@if (Model.PageViewModel.HasPreviousPage)
+{
+    <a class="btn btn-dark" 
+       asp-action="Index"
+       asp-route-page="@(Model.PageViewModel.PageNumber - 1)"
+       asp-route-sortOrder="@Model.PageViewModel.SortState">
+        Back
+    </a>
+}
+@if (Model.PageViewModel.HasNextPage)
+{
+    <a class="btn btn-dark" 
+       asp-action="Index"
+       asp-route-page="@(Model.PageViewModel.PageNumber + 1)"
+       asp-route-sortOrder="@Model.PageViewModel.SortState">
+        Forward
+    </a>
+}

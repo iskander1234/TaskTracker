@@ -1,0 +1,19 @@
+﻿@model TaskTracker.Models.Task
+
+@{
+    ViewData["Title"]= "Create";
+    Layout = "_Layout";
+}
+
+<h2>Fill out the form to add</h2>
+
+<div class="row">
+    <div class="col-md-6">
+        <form asp-action="Create" asp-controller="Tasks" method="post">
+            @{
+                Html.RenderPartial("PartialView/PartialView");
+            }
+            <button type="submit">Add</button>
+        </form>
+    </div>
+</div>

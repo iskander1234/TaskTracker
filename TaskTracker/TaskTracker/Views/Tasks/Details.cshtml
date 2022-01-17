@@ -1,0 +1,67 @@
+﻿@model TaskTracker.Models.Task
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "_Layout";
+}
+
+<h2>Detailed task</h2>
+
+<table class="custom_table">
+        <tr>
+            <th>Id</th>
+            <th>Name task</th>
+            <th>Priority</th>
+            <th>Status</th>
+            <th>Creation date</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td>@Model.Id</td>
+            <td>@Model.Name</td>
+            <td>@if (@Model.Priority == Priority.Tall)
+                {
+                    <span>High</span>
+                }
+                else if (@Model.Priority == Priority.Middle)
+                {
+                    <span>Average</span>
+                }
+                else
+                {
+                    <span>Low</span>
+                }</td>
+            <td>
+                @if (Model.Status == Status.Open)
+                {
+                    <span>Open</span>
+                }
+                else if (Model.Status == Status.New)
+                {
+                    <span>New</span>
+                }
+                else
+                {
+                    <span>Closed</span>
+                }
+            </td>
+            <td>@Model.СreatedDate</td>
+            <td>@Model.Description</td>
+            <td>
+                @if (Model.Status == Status.Open)
+                {
+                    <a class="btn btn-secondary" asp-action="Close" asp-controller="Tasks" asp-route-id="@Model.Id">Close</a>
+                }
+                @if (Model.Status == Status.Close)
+                {
+                    <a class="btn btn-danger" asp-action="Delete" asp-controller="Tasks" asp-route-id="@Model.Id">Delite</a>
+                }
+                @if (Model.Status == Status.New)
+                {
+                    <a class="btn btn-success" asp-action="Open" asp-controller="Tasks" asp-route-id="@Model.Id">Open</a>
+                    <a class="btn btn-danger" asp-action="Delete" asp-controller="Tasks" asp-route-id="@Model.Id">Delite</a>
+                    <a class="btn btn-info" asp-action="Edit" asp-controller="Tasks" asp-route-id="@Model.Id">Edit</a>
+                }
+            </td>
+        </tr>
+</table>
