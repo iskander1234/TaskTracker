@@ -6,6 +6,10 @@ using TaskTracker.ViewModels;
 
 namespace TaskTracker.Controllers
 {
+    /// <summary>
+    /// Enum SortState
+    /// To sort by variables
+    /// </summary>
     public enum SortState
     {
         NameAsc,
@@ -26,7 +30,9 @@ namespace TaskTracker.Controllers
             _db = db;
         }
         
-               // GET
+        /// <summary>
+        /// Method Index for table and for sorting by columns
+        /// </summary>
         public IActionResult Index(int id, int page = 1, SortState sortOrder = SortState.NameAsc)
         {
 
@@ -82,6 +88,9 @@ namespace TaskTracker.Controllers
             return View(viewModel);
         }
         
+        /// <summary>
+        /// Method Edit for editing tasks
+        /// </summary>
         public IActionResult Edit(int? id)
         {
             Task task = _db.Tasks.FirstOrDefault(p => p.Id == id);
@@ -104,6 +113,9 @@ namespace TaskTracker.Controllers
             return RedirectToAction("Index");
         }
         
+        /// <summary>
+        /// Method Create To add tasks
+        /// </summary>
         public IActionResult Create()
         {
             return View();
@@ -121,6 +133,9 @@ namespace TaskTracker.Controllers
             return RedirectToAction("Index");
         }
         
+        /// <summary>
+        /// Method Details - For a complete task detail
+        /// </summary>
         public IActionResult Details(int id)
         {
             Task task = _db.Tasks.FirstOrDefault(t => t.Id == id);
@@ -131,6 +146,9 @@ namespace TaskTracker.Controllers
             return View(task);
         }
         
+        /// <summary>
+        /// Method Delete - For removal
+        /// </summary>
         public IActionResult Delete(int id)
         {
             Task task = _db.Tasks.FirstOrDefault(t => t.Id == id);
@@ -141,6 +159,9 @@ namespace TaskTracker.Controllers
             return NotFound();
         }
         
+        /// <summary>
+        /// Method Delete - To confirm deletion
+        /// </summary>
         [HttpPost]
         [ActionName("Delete")]
         public IActionResult ConfirmDelete(int id)
