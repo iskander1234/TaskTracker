@@ -19,8 +19,6 @@ C:\csharp\TaskTracker\TaskTracker\TaskTracker\obj\Debug\netcoreapp3.1\TaskTracke
 C:\csharp\TaskTracker\TaskTracker\TaskTracker\obj\Debug\netcoreapp3.1\TaskTracker.TagHelpers.input.cache
 C:\csharp\TaskTracker\TaskTracker\TaskTracker\obj\Debug\netcoreapp3.1\TaskTracker.TagHelpers.output.cache
 C:\csharp\TaskTracker\TaskTracker\TaskTracker\obj\Debug\netcoreapp3.1\TaskTracker.RazorCoreGenerate.cache
-C:\csharp\TaskTracker\TaskTracker\TaskTracker\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
-C:\csharp\TaskTracker\TaskTracker\TaskTracker\obj\Debug\netcoreapp3.1\Razor\Views\Home\Privacy.cshtml.g.cs
 C:\csharp\TaskTracker\TaskTracker\TaskTracker\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs
 C:\csharp\TaskTracker\TaskTracker\TaskTracker\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
 C:\csharp\TaskTracker\TaskTracker\TaskTracker\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
@@ -56,3 +54,9 @@ C:\csharp\TaskTracker\TaskTracker\TaskTracker\bin\Debug\netcoreapp3.1\Npgsql.dll
 C:\csharp\TaskTracker\TaskTracker\TaskTracker\bin\Debug\netcoreapp3.1\Npgsql.EntityFrameworkCore.PostgreSQL.dll
 C:\csharp\TaskTracker\TaskTracker\TaskTracker\bin\Debug\netcoreapp3.1\System.Collections.Immutable.dll
 C:\csharp\TaskTracker\TaskTracker\TaskTracker\bin\Debug\netcoreapp3.1\System.Diagnostics.DiagnosticSource.dll
+C:\csharp\TaskTracker\TaskTracker\TaskTracker\obj\Debug\netcoreapp3.1\Razor\Views\Tasks\Create.cshtml.g.cs
+C:\csharp\TaskTracker\TaskTracker\TaskTracker\obj\Debug\netcoreapp3.1\Razor\Views\Tasks\Delete.cshtml.g.cs
+C:\csharp\TaskTracker\TaskTracker\TaskTracker\obj\Debug\netcoreapp3.1\Razor\Views\Tasks\Details.cshtml.g.cs
+C:\csharp\TaskTracker\TaskTracker\TaskTracker\obj\Debug\netcoreapp3.1\Razor\Views\Tasks\Index.cshtml.g.cs
+C:\csharp\TaskTracker\TaskTracker\TaskTracker\obj\Debug\netcoreapp3.1\Razor\Views\Tasks\PartialView\PartialView.cshtml.g.cs
+C:\csharp\TaskTracker\TaskTracker\TaskTracker\obj\Debug\netcoreapp3.1\Razor\Views\Tasks\Edit.cshtml.g.cs
