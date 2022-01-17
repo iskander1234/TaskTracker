@@ -3,7 +3,7 @@ Web application for task tasks<br>
 
 ## Used database
 Used database **Postgres SQL**<br>
-To connect PostgresSQL, the library **Npgsql.EntityFrameworkCore.PostgresSQL** was used<br>>
+To connect PostgresSQL, the library **Npgsql.EntityFrameworkCore.PostgresSQL** was used<br>
 
 ## Application Options
 Used in **ASP.NET Inentity** applications when connecting **Inentity** all necessary files are added to it by default to work with AspNet Identity.Inentity
